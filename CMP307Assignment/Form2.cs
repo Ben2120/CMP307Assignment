@@ -26,5 +26,11 @@ namespace CMP307Assignment
         {
             this.Close();
         }
+
+        private void EditEmployee_Click(object sender, EventArgs e)
+        {
+           ViewEmployee View_Employeeform = new ViewEmployee();
+           View_Employeeform.ShowDialog();
+        }
     }
 }

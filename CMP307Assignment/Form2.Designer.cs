@@ -204,6 +204,7 @@
             EditEmployee.TabIndex = 22;
             EditEmployee.Text = "Edit an Employee's Information";
             EditEmployee.UseVisualStyleBackColor = true;
+            EditEmployee.Click += EditEmployee_Click;
             // 
             // Employee
             // 

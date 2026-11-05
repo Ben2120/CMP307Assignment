@@ -16,5 +16,10 @@ namespace CMP307Assignment
         {
             InitializeComponent();
         }
+
+        private void SystemType_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

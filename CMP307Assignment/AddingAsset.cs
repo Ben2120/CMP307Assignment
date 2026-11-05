@@ -41,17 +41,19 @@ namespace CMP307Assignment
             //getting the system name from the machine
             systemname.Text = Environment.MachineName;
 
+
             //getting the manufacturer and model
             try
 
             {
-                using (ManagementObjectSearcher Searcher = new ManagementObjectSearcher "SELECT System Manufacturer, System Model FROM Win32_ComputerSystem"))
+                using (ManagementObjectSearcher Searcher = new ManagementObjectSearcher ("SELECT Manufacturer, Model, PCSystemType FROM Win32_ComputerSystem"))
                 {
                     {
-                        foreach (ManagementObject computer in searcher.Get())
+                        foreach (ManagementObject computer in Searcher.Get())
                         {
                             systemmanufacturer.Text = Convert.ToString(computer["Manufacturer"]);
                             systemmodel.Text =Convert.ToString(computer["Model"]);
+                            systemtype.Text = Convert.ToString(computer["PCSystemType"]);
 
                             break;
                         }
@@ -68,7 +70,10 @@ namespace CMP307Assignment
             //get the ip address from the computer system
             try
             {
-                var ipAddress = Dns.GetHostAddresses(Dns.GetHostName()).FirstOrDefault(ip => ip.AddressFamily == AddressFamily.InterNetwork && !IPAddress.IsLoopback(ip));
+                var ipAddress = Dns.GetHostAddresses
+                    (Dns.GetHostName()).FirstOrDefault
+                    (ip => ip.AddressFamily == AddressFamily.InterNetwork && !IPAddress.IsLoopback(ip));
+                
                 systemIP.Text = ipAddress?.ToString() ?? "";
             }
 

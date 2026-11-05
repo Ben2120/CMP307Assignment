@@ -105,7 +105,6 @@
             // 
             assetID.Location = new Point(12, 183);
             assetID.Name = "assetID";
-            assetID.ReadOnly = true;
             assetID.Size = new Size(77, 23);
             assetID.TabIndex = 24;
             // 
@@ -130,7 +129,6 @@
             // 
             systemIP.Location = new Point(12, 565);
             systemIP.Name = "systemIP";
-            systemIP.ReadOnly = true;
             systemIP.Size = new Size(258, 23);
             systemIP.TabIndex = 44;
             // 
@@ -148,7 +146,6 @@
             // 
             systemtype.Location = new Point(12, 492);
             systemtype.Name = "systemtype";
-            systemtype.ReadOnly = true;
             systemtype.Size = new Size(258, 23);
             systemtype.TabIndex = 42;
             // 
@@ -166,7 +163,6 @@
             // 
             systemmanufacturer.Location = new Point(12, 422);
             systemmanufacturer.Name = "systemmanufacturer";
-            systemmanufacturer.ReadOnly = true;
             systemmanufacturer.Size = new Size(258, 23);
             systemmanufacturer.TabIndex = 40;
             // 
@@ -184,7 +180,6 @@
             // 
             systemmodel.Location = new Point(12, 344);
             systemmodel.Name = "systemmodel";
-            systemmodel.ReadOnly = true;
             systemmodel.Size = new Size(258, 23);
             systemmodel.TabIndex = 38;
             // 
