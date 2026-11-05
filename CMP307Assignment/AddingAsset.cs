@@ -43,28 +43,20 @@ namespace CMP307Assignment
 
 
             //getting the manufacturer and model
-            try
 
+            using (ManagementObjectSearcher Searcher = new ManagementObjectSearcher("SELECT Manufacturer, Model, SystemType FROM Win32_ComputerSystem"))
+           
             {
-                using (ManagementObjectSearcher Searcher = new ManagementObjectSearcher ("SELECT Manufacturer, Model, PCSystemType FROM Win32_ComputerSystem"))
+                foreach (ManagementObject computer in Searcher.Get())
                 {
-                    {
-                        foreach (ManagementObject computer in Searcher.Get())
-                        {
-                            systemmanufacturer.Text = Convert.ToString(computer["Manufacturer"]);
-                            systemmodel.Text =Convert.ToString(computer["Model"]);
-                            systemtype.Text = Convert.ToString(computer["PCSystemType"]);
+                    systemmanufacturer.Text = Convert.ToString(computer["Manufacturer"]);
 
-                            break;
-                        }
-                    }
+                    systemmodel.Text = Convert.ToString(computer["Model"]);
+
+                    systemtype.Text = Convert.ToString(computer["SystemType"]);
+
+                    break;
                 }
-            }
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    "Unable to retrieve system details: " + ex.Message);
             }
 
             //get the ip address from the computer system
