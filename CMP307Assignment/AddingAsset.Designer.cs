@@ -105,7 +105,8 @@
             // 
             assetID.Location = new Point(12, 183);
             assetID.Name = "assetID";
-            assetID.Size = new Size(77, 23);
+            assetID.ReadOnly = true;
+            assetID.Size = new Size(258, 23);
             assetID.TabIndex = 24;
             // 
             // label1

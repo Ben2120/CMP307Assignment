@@ -33,8 +33,8 @@
             ats = new Label();
             pictureBox1 = new PictureBox();
             label1 = new Label();
-            textBox1 = new TextBox();
-            button1 = new Button();
+            assetName = new TextBox();
+            searchasset = new Button();
             AssetInfo = new ListBox();
             editasset = new Button();
             DeleteAsset = new Button();
@@ -84,27 +84,29 @@
             label1.Font = new Font("Sitka Display", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(12, 144);
             label1.Name = "label1";
-            label1.Size = new Size(285, 30);
+            label1.Size = new Size(310, 30);
             label1.TabIndex = 2;
-            label1.Text = "Please Enter Asset ID Number ";
+            label1.Text = "Please Enter Asset/System Name ";
+            label1.Click += label1_Click;
             // 
-            // textBox1
+            // assetName
             // 
-            textBox1.Location = new Point(12, 186);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(88, 23);
-            textBox1.TabIndex = 3;
+            assetName.Location = new Point(12, 186);
+            assetName.Name = "assetName";
+            assetName.Size = new Size(310, 23);
+            assetName.TabIndex = 3;
             // 
-            // button1
+            // searchasset
             // 
-            button1.Font = new Font("Sitka Display", 15.7499981F, FontStyle.Bold);
-            button1.Location = new Point(303, 147);
-            button1.Name = "button1";
-            button1.Padding = new Padding(10);
-            button1.Size = new Size(131, 62);
-            button1.TabIndex = 4;
-            button1.Text = "Search";
-            button1.UseVisualStyleBackColor = true;
+            searchasset.Font = new Font("Sitka Display", 15.7499981F, FontStyle.Bold);
+            searchasset.Location = new Point(377, 147);
+            searchasset.Name = "searchasset";
+            searchasset.Padding = new Padding(10);
+            searchasset.Size = new Size(131, 62);
+            searchasset.TabIndex = 4;
+            searchasset.Text = "Search";
+            searchasset.UseVisualStyleBackColor = true;
+            searchasset.Click += searchassetbutton;
             // 
             // AssetInfo
             // 
@@ -125,6 +127,7 @@
             editasset.TabIndex = 20;
             editasset.Text = "Edit";
             editasset.UseVisualStyleBackColor = true;
+            editasset.Click += editasset_Click;
             // 
             // DeleteAsset
             // 
@@ -136,6 +139,7 @@
             DeleteAsset.TabIndex = 21;
             DeleteAsset.Text = "Delete Asset";
             DeleteAsset.UseVisualStyleBackColor = true;
+            DeleteAsset.Click += DeleteAsset_Click;
             // 
             // Exit
             // 
@@ -158,8 +162,8 @@
             Controls.Add(DeleteAsset);
             Controls.Add(editasset);
             Controls.Add(AssetInfo);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(searchasset);
+            Controls.Add(assetName);
             Controls.Add(label1);
             Controls.Add(panel1);
             Name = "View_Asset";
@@ -177,11 +181,11 @@
         private Label ats;
         private PictureBox pictureBox1;
         private Label label1;
-        private TextBox textBox1;
-        private Button button1;
+        private TextBox assetName;
         private ListBox AssetInfo;
         private Button editasset;
         private Button DeleteAsset;
         private Button Exit;
+        private Button searchasset;
     }
 }

@@ -33,8 +33,8 @@
             DeleteEmployee = new Button();
             editasset = new Button();
             EmployeeInfo = new ListBox();
-            button1 = new Button();
-            textBox1 = new TextBox();
+            searchemployee = new Button();
+            employeeIDtextbox = new TextBox();
             label1 = new Label();
             panel1 = new Panel();
             ats = new Label();
@@ -65,6 +65,7 @@
             DeleteEmployee.TabIndex = 29;
             DeleteEmployee.Text = "Delete Employee";
             DeleteEmployee.UseVisualStyleBackColor = true;
+            DeleteEmployee.Click += DeleteEmployee_Click;
             // 
             // editasset
             // 
@@ -76,6 +77,7 @@
             editasset.TabIndex = 28;
             editasset.Text = "Edit";
             editasset.UseVisualStyleBackColor = true;
+            editasset.Click += editasset_Click;
             // 
             // EmployeeInfo
             // 
@@ -86,23 +88,24 @@
             EmployeeInfo.Size = new Size(422, 274);
             EmployeeInfo.TabIndex = 27;
             // 
-            // button1
+            // searchemployee
             // 
-            button1.Font = new Font("Sitka Display", 15.7499981F, FontStyle.Bold);
-            button1.Location = new Point(343, 194);
-            button1.Name = "button1";
-            button1.Padding = new Padding(10);
-            button1.Size = new Size(131, 62);
-            button1.TabIndex = 26;
-            button1.Text = "Search";
-            button1.UseVisualStyleBackColor = true;
+            searchemployee.Font = new Font("Sitka Display", 15.7499981F, FontStyle.Bold);
+            searchemployee.Location = new Point(343, 194);
+            searchemployee.Name = "searchemployee";
+            searchemployee.Padding = new Padding(10);
+            searchemployee.Size = new Size(131, 62);
+            searchemployee.TabIndex = 26;
+            searchemployee.Text = "Search";
+            searchemployee.UseVisualStyleBackColor = true;
+            searchemployee.Click += searchemployee_Click;
             // 
-            // textBox1
+            // employeeIDtextbox
             // 
-            textBox1.Location = new Point(12, 233);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(88, 23);
-            textBox1.TabIndex = 25;
+            employeeIDtextbox.Location = new Point(12, 233);
+            employeeIDtextbox.Name = "employeeIDtextbox";
+            employeeIDtextbox.Size = new Size(88, 23);
+            employeeIDtextbox.TabIndex = 25;
             // 
             // label1
             // 
@@ -158,8 +161,8 @@
             Controls.Add(DeleteEmployee);
             Controls.Add(editasset);
             Controls.Add(EmployeeInfo);
-            Controls.Add(button1);
-            Controls.Add(textBox1);
+            Controls.Add(searchemployee);
+            Controls.Add(employeeIDtextbox);
             Controls.Add(label1);
             Controls.Add(panel1);
             Name = "ViewEmployee";
@@ -177,8 +180,8 @@
         private Button DeleteEmployee;
         private Button editasset;
         private ListBox EmployeeInfo;
-        private Button button1;
-        private TextBox textBox1;
+        private Button searchemployee;
+        private TextBox employeeIDtextbox;
         private Label label1;
         private Panel panel1;
         private Label ats;

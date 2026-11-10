@@ -33,7 +33,7 @@
             ats = new Label();
             pictureBox1 = new PictureBox();
             homebtn = new Button();
-            button1 = new Button();
+            editassetbutton = new Button();
             extranotes = new TextBox();
             purchasedate = new TextBox();
             employeeID = new TextBox();
@@ -101,17 +101,19 @@
             homebtn.TabIndex = 41;
             homebtn.Text = "Exit";
             homebtn.UseVisualStyleBackColor = true;
+            homebtn.Click += homebtn_Click;
             // 
-            // button1
+            // editassetbutton
             // 
-            button1.Font = new Font("Sitka Display", 15.7499981F, FontStyle.Bold);
-            button1.Location = new Point(864, 213);
-            button1.Name = "button1";
-            button1.Padding = new Padding(10);
-            button1.Size = new Size(242, 131);
-            button1.TabIndex = 40;
-            button1.Text = "Update Asset";
-            button1.UseVisualStyleBackColor = true;
+            editassetbutton.Font = new Font("Sitka Display", 15.7499981F, FontStyle.Bold);
+            editassetbutton.Location = new Point(864, 213);
+            editassetbutton.Name = "editassetbutton";
+            editassetbutton.Padding = new Padding(10);
+            editassetbutton.Size = new Size(242, 131);
+            editassetbutton.TabIndex = 40;
+            editassetbutton.Text = "Update Asset";
+            editassetbutton.UseVisualStyleBackColor = true;
+            editassetbutton.Click += editassetbutton_Click;
             // 
             // extranotes
             // 
@@ -254,6 +256,7 @@
             // 
             assetID.Location = new Point(12, 199);
             assetID.Name = "assetID";
+            assetID.ReadOnly = true;
             assetID.Size = new Size(77, 23);
             assetID.TabIndex = 23;
             // 
@@ -273,7 +276,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1135, 632);
             Controls.Add(homebtn);
-            Controls.Add(button1);
+            Controls.Add(editassetbutton);
             Controls.Add(extranotes);
             Controls.Add(purchasedate);
             Controls.Add(employeeID);
@@ -308,7 +311,7 @@
         private Label ats;
         private PictureBox pictureBox1;
         private Button homebtn;
-        private Button button1;
+        private Button editassetbutton;
         private TextBox extranotes;
         private TextBox purchasedate;
         private TextBox employeeID;

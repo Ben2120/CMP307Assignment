@@ -32,16 +32,16 @@
             panel1 = new Panel();
             ats = new Label();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
+            employeeID = new TextBox();
             label1 = new Label();
-            textBox2 = new TextBox();
+            firstname = new TextBox();
             label2 = new Label();
-            textBox3 = new TextBox();
+            lastname = new TextBox();
             label3 = new Label();
-            textBox4 = new TextBox();
+            email = new TextBox();
             label4 = new Label();
             label5 = new Label();
-            comboBox1 = new ComboBox();
+            Departmentsbox = new ComboBox();
             button1 = new Button();
             button2 = new Button();
             EditEmployee = new Button();
@@ -84,12 +84,12 @@
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // employeeID
             // 
-            textBox1.Location = new Point(12, 183);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(258, 23);
-            textBox1.TabIndex = 4;
+            employeeID.Location = new Point(12, 183);
+            employeeID.Name = "employeeID";
+            employeeID.Size = new Size(258, 23);
+            employeeID.TabIndex = 4;
             // 
             // label1
             // 
@@ -101,12 +101,12 @@
             label1.TabIndex = 3;
             label1.Text = "Employee Identification Number";
             // 
-            // textBox2
+            // firstname
             // 
-            textBox2.Location = new Point(384, 183);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(258, 23);
-            textBox2.TabIndex = 6;
+            firstname.Location = new Point(384, 183);
+            firstname.Name = "firstname";
+            firstname.Size = new Size(258, 23);
+            firstname.TabIndex = 6;
             // 
             // label2
             // 
@@ -118,12 +118,12 @@
             label2.TabIndex = 5;
             label2.Text = "First Name";
             // 
-            // textBox3
+            // lastname
             // 
-            textBox3.Location = new Point(12, 264);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(258, 23);
-            textBox3.TabIndex = 8;
+            lastname.Location = new Point(12, 264);
+            lastname.Name = "lastname";
+            lastname.Size = new Size(258, 23);
+            lastname.TabIndex = 8;
             // 
             // label3
             // 
@@ -135,12 +135,12 @@
             label3.TabIndex = 7;
             label3.Text = "Last Name";
             // 
-            // textBox4
+            // email
             // 
-            textBox4.Location = new Point(384, 264);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(258, 23);
-            textBox4.TabIndex = 10;
+            email.Location = new Point(384, 264);
+            email.Name = "email";
+            email.Size = new Size(258, 23);
+            email.TabIndex = 10;
             // 
             // label4
             // 
@@ -162,14 +162,14 @@
             label5.TabIndex = 11;
             label5.Text = "Department";
             // 
-            // comboBox1
+            // Departmentsbox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Finance", "Human Resources", "Operations", "Sales", "Information Technology" });
-            comboBox1.Location = new Point(12, 364);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(258, 23);
-            comboBox1.TabIndex = 12;
+            Departmentsbox.FormattingEnabled = true;
+            Departmentsbox.Items.AddRange(new object[] { "Finance", "Human Resources", "Operations", "Sales", "Information Technology" });
+            Departmentsbox.Location = new Point(12, 364);
+            Departmentsbox.Name = "Departmentsbox";
+            Departmentsbox.Size = new Size(258, 23);
+            Departmentsbox.TabIndex = 12;
             // 
             // button1
             // 
@@ -181,6 +181,7 @@
             button1.TabIndex = 20;
             button1.Text = "Save Information";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -214,15 +215,15 @@
             Controls.Add(EditEmployee);
             Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(comboBox1);
+            Controls.Add(Departmentsbox);
             Controls.Add(label5);
-            Controls.Add(textBox4);
+            Controls.Add(email);
             Controls.Add(label4);
-            Controls.Add(textBox3);
+            Controls.Add(lastname);
             Controls.Add(label3);
-            Controls.Add(textBox2);
+            Controls.Add(firstname);
             Controls.Add(label2);
-            Controls.Add(textBox1);
+            Controls.Add(employeeID);
             Controls.Add(label1);
             Controls.Add(panel1);
             Name = "Employee";
@@ -240,16 +241,16 @@
         private Panel panel1;
         private Label ats;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
+        private TextBox employeeID;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox firstname;
         private Label label2;
-        private TextBox textBox3;
+        private TextBox lastname;
         private Label label3;
-        private TextBox textBox4;
+        private TextBox email;
         private Label label4;
         private Label label5;
-        private ComboBox comboBox1;
+        private ComboBox Departmentsbox;
         private Button button1;
         private Button button2;
         private Button EditEmployee;
