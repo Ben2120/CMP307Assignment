@@ -1,4 +1,5 @@
-﻿using System;
+﻿//all libraries required for programme
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,7 @@ namespace CMP307Assignment
            RetrievingSystemInfo();
         }
 
+        //exit button
         private void homebtn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -97,6 +99,7 @@ namespace CMP307Assignment
             using (ManagementObjectSearcher Searcher = new ManagementObjectSearcher("SELECT Manufacturer, Model, SystemType FROM Win32_ComputerSystem"))
            
             {
+                //this section reads the hardware details from the system it is running on 
                 foreach (ManagementObject computer in Searcher.Get())
                 {
                     systemmanufacturer.Text = Convert.ToString(computer["Manufacturer"]);
@@ -119,6 +122,7 @@ namespace CMP307Assignment
                 systemIP.Text = ipAddress?.ToString() ?? "";
             }
 
+            //this ensures the user is aware if the software could not read the IP address from the system
             catch (Exception ex)
             {
                 MessageBox.Show(
