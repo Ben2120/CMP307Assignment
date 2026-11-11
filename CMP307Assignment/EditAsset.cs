@@ -12,9 +12,10 @@ using System.Data.SqlClient;
 using System.Web;
 
 namespace CMP307Assignment
-{
+{   
     public partial class EditAsset : Form
     {
+        //this is how the software communicates with the database.
         string connectionString = @"Server = tolmount.abertay.ac.uk; Database = mssql2403393; User Id = mssql2403393; Password = gKL5hCw3Gs; Encrypt = True; TrustServerCertificate = True;";
         private int selectedAssetID;
 
@@ -35,6 +36,7 @@ namespace CMP307Assignment
 
         }
 
+        //this is how the data from the asset which was just searched for gets loaded into this page.
         private void LoadAssetDetails()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -91,6 +93,7 @@ namespace CMP307Assignment
             this.Close();
         }
 
+        //this is how the information gets updated in the database, if any changes are made. 
         private void editassetbutton_Click(object sender, EventArgs e)
         {
 

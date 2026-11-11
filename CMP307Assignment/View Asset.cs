@@ -34,6 +34,7 @@ namespace CMP307Assignment
 
         }
 
+        //this ensures an asset has been searched for and commences the search for the asset.
         private void searchassetbutton(object sender, EventArgs e)
         {
             AssetInfo.Items.Clear();
@@ -78,6 +79,7 @@ namespace CMP307Assignment
             }
         }
 
+        //if the user intends to edit the asset this will show the edit asset form.
         private void editasset_Click(object sender, EventArgs e)
         {
             if (selectedAssetID == null)
@@ -91,6 +93,7 @@ namespace CMP307Assignment
             editassetform.ShowDialog();
         }
 
+        //this ensures an asset has been searched for and then commences the deletion if it is a valid asset in the database
         private void DeleteAsset_Click(object sender, EventArgs e)
         {
             if (assetName == null)

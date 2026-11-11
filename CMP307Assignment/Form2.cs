@@ -35,6 +35,7 @@ namespace CMP307Assignment
             View_Employeeform.ShowDialog();
         }
 
+        //this allows for employee data to be inserted and saved in the database
         private void button1_Click(object sender, EventArgs e)
         {
             string connectionString = @"Server = tolmount.abertay.ac.uk; Database = mssql2403393; User Id = mssql2403393; Password = gKL5hCw3Gs; Encrypt = True; TrustServerCertificate = True;";
@@ -89,6 +90,7 @@ namespace CMP307Assignment
             }
         }
 
+        //this makes sure the departments which are available to select are displayed in the drop box which are also connected to the department identification number to ensure they can be linked with employees.
         private void LoadDepartments()
         {
             string query = @"SELECT DepartmentID, DepartmentName FROM ATS.DEPARTMENTS ORDER BY DepartmentName";

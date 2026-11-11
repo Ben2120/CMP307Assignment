@@ -28,6 +28,7 @@ namespace CMP307Assignment
             this.Close();
         }
 
+        //this ensures that the user enters a valid employee identification number and then loads the information in to ensure that the data matches the employee ID number which was searched.
         private void searchemployee_Click(object sender, EventArgs e)
         {
             EmployeeInfo.Items.Clear();
@@ -84,7 +85,8 @@ namespace CMP307Assignment
             }
 
         }
-
+       
+        //this ensures that an employee has been searched for correctly, the code below ensures an employee gets deleted correctly and if it cannot be deleted it displays the required messages to give the user clarity of their actions.
         private void DeleteEmployee_Click(object sender, EventArgs e)
         {
             if (selectedEmployeeID == null)
@@ -96,7 +98,7 @@ namespace CMP307Assignment
             int employeeID = selectedEmployeeID.Value;
 
             DialogResult result = MessageBox.Show(
-                "If you delete this employee, any of the assets assigned to this employee will be left with no one responsible. Please ensure you edit the assets which will be effected?.",
+                "If you delete this employee, any of the assets assigned to this employee will be left with no one responsible. Please ensure you edit the assets which will be effected.",
                 "Confirm Employee Deletion",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning);
@@ -108,19 +110,18 @@ namespace CMP307Assignment
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
+                using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    conn.Open();
+                    connection.Open();
 
-                    using (SqlTransaction transaction = conn.BeginTransaction())
+                    using (SqlTransaction transaction = connection.BeginTransaction())
                     {
                         try
                         {
-                            // Step 1: Unassign all assets belonging to the employee
+                            //due to the foreign key in the assets table, the employee ID needs to be removed from which assets the employee was assigned to.
                             string updateQuery = @"UPDATE ATS.ASSETS SET EmployeeID = NULL WHERE EmployeeID = @EmployeeID";
 
-                            using (SqlCommand updateCmd =
-                                new SqlCommand(updateQuery, conn, transaction))
+                            using (SqlCommand updateCmd = new SqlCommand(updateQuery, connection, transaction))
                             {
                                 updateCmd.Parameters.Add("@EmployeeID", SqlDbType.Int)
                                     .Value = employeeID;
@@ -128,13 +129,12 @@ namespace CMP307Assignment
                                 updateCmd.ExecuteNonQuery();
                             }
 
-                            // Step 2: Delete the employee
+                            //this deletes the employee which matches the employee ID
                             string deleteQuery = @"DELETE FROM ATS.EMPLOYEES WHERE EmployeeID = @EmployeeID";
 
                             int rowsAffected;
 
-                            using (SqlCommand deleteCmd =
-                                new SqlCommand(deleteQuery, conn, transaction))
+                            using (SqlCommand deleteCmd = new SqlCommand(deleteQuery, connection, transaction))
                             {
                                 deleteCmd.Parameters.Add("@EmployeeID", SqlDbType.Int)
                                     .Value = employeeID;

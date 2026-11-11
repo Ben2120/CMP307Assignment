@@ -15,7 +15,7 @@ using System.DirectoryServices.ActiveDirectory;
 namespace CMP307Assignment
 {
     public partial class EditingEmployee : Form
-    {
+    { //ensuring link between software and database is connected
         string connectionString = @"Server = tolmount.abertay.ac.uk; Database = mssql2403393; User Id = mssql2403393; Password = gKL5hCw3Gs; Encrypt = True; TrustServerCertificate = True;";
         private readonly int selectedEmployeeID;
 
@@ -39,6 +39,7 @@ namespace CMP307Assignment
 
         }
 
+        //retrieving the departments data which will be shown in the item box
         private void LoadDepartments()
         {
             string query = @"SELECT DepartmentID, DepartmentName FROM ATS.DEPARTMENTS ORDER BY DepartmentName";
@@ -57,7 +58,8 @@ namespace CMP307Assignment
                 }
             }
         }
-
+        
+        //This ensures that the correct employee details are being outputted by the software - based on the employee identification number which was searched for. 
         private void LoadEmployeeDetails()
         {
             string query = @"SELECT FirstName, LastName, Email, DepartmentID FROM ATS.EMPLOYEES WHERE EmployeeID = @EmployeeID";
@@ -107,6 +109,7 @@ namespace CMP307Assignment
             }
         }
 
+        //this updates all of the information which has been inserted, if any changes happen, if anything is left blank, the user will see a message stating it cannot be left blank.
         private void updateinformation_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(firstname.Text) || string.IsNullOrWhiteSpace(lastname.Text) || string.IsNullOrWhiteSpace(email.Text))
