@@ -40,8 +40,11 @@
             panel4 = new Panel();
             panel7 = new Panel();
             panel2 = new Panel();
+            addingSoftwarebutton = new Button();
+            editsoftwarebutton = new Button();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel5.SuspendLayout();
             panel4.SuspendLayout();
             panel7.SuspendLayout();
             panel2.SuspendLayout();
@@ -131,6 +134,8 @@
             // panel5
             // 
             panel5.BackColor = Color.SteelBlue;
+            panel5.Controls.Add(editsoftwarebutton);
+            panel5.Controls.Add(addingSoftwarebutton);
             panel5.Location = new Point(0, 377);
             panel5.Name = "panel5";
             panel5.Size = new Size(1084, 337);
@@ -163,6 +168,28 @@
             panel2.Size = new Size(370, 251);
             panel2.TabIndex = 6;
             // 
+            // addingSoftwarebutton
+            // 
+            addingSoftwarebutton.Font = new Font("Georgia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addingSoftwarebutton.Location = new Point(144, 33);
+            addingSoftwarebutton.Name = "addingSoftwarebutton";
+            addingSoftwarebutton.Padding = new Padding(10);
+            addingSoftwarebutton.Size = new Size(342, 235);
+            addingSoftwarebutton.TabIndex = 7;
+            addingSoftwarebutton.Text = "Add Software";
+            addingSoftwarebutton.UseVisualStyleBackColor = true;
+            // 
+            // editsoftwarebutton
+            // 
+            editsoftwarebutton.Font = new Font("Georgia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            editsoftwarebutton.Location = new Point(576, 33);
+            editsoftwarebutton.Name = "editsoftwarebutton";
+            editsoftwarebutton.Padding = new Padding(10);
+            editsoftwarebutton.Size = new Size(342, 235);
+            editsoftwarebutton.TabIndex = 8;
+            editsoftwarebutton.Text = "View/Edit Software";
+            editsoftwarebutton.UseVisualStyleBackColor = true;
+            // 
             // HomePage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -181,6 +208,7 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel5.ResumeLayout(false);
             panel4.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel2.ResumeLayout(false);
@@ -200,5 +228,7 @@
         private Panel panel4;
         private Panel panel7;
         private Panel panel2;
+        private Button editsoftwarebutton;
+        private Button addingSoftwarebutton;
     }
 }
