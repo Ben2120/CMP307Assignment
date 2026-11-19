@@ -179,6 +179,7 @@
             savebutton.TabIndex = 52;
             savebutton.Text = "Save Software";
             savebutton.UseVisualStyleBackColor = true;
+            savebutton.Click += savebutton_Click;
             // 
             // exitbutton
             // 
@@ -190,6 +191,7 @@
             exitbutton.TabIndex = 53;
             exitbutton.Text = "Exit";
             exitbutton.UseVisualStyleBackColor = true;
+            exitbutton.Click += exitbutton_Click;
             // 
             // AddingSoftware
             // 

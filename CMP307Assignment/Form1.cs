@@ -24,7 +24,7 @@ namespace CMP307Assignment
 
         private void button2_Click(object sender, EventArgs e)
         {
-           Employee employeeform = new Employee();
+            Employee employeeform = new Employee();
             employeeform.ShowDialog();
         }
 
@@ -38,6 +38,24 @@ namespace CMP307Assignment
         {
             View_Asset view_assetform = new View_Asset();
             view_assetform.ShowDialog();
+        }
+
+        private void addingSoftwarebutton_Click(object sender, EventArgs e)
+        {
+            AddingSoftware addingsoftwareform = new AddingSoftware();
+            addingsoftwareform.ShowDialog();
+        }
+
+        private void editsoftwarebutton_Click(object sender, EventArgs e)
+        {
+            ViewSoftware viewSoftwareform = new ViewSoftware();
+            viewSoftwareform.ShowDialog();
+        }
+
+        private void login_Click(object sender, EventArgs e)
+        {
+            Login loginform = new Login();
+            loginform.ShowDialog();
         }
     }
 }

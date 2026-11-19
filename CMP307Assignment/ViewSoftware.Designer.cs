@@ -88,6 +88,7 @@
             Exit.TabIndex = 29;
             Exit.Text = "Exit";
             Exit.UseVisualStyleBackColor = true;
+            Exit.Click += Exit_Click;
             // 
             // DeleteSoftware
             // 

@@ -30,31 +30,28 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomePage));
             panel1 = new Panel();
-            ats = new Label();
             pictureBox1 = new PictureBox();
+            ats = new Label();
             panel3 = new Panel();
-            Employee = new Button();
-            editassetsbutton = new Button();
-            addasset = new Button();
-            panel5 = new Panel();
-            panel4 = new Panel();
-            panel7 = new Panel();
-            panel2 = new Panel();
             addingSoftwarebutton = new Button();
             editsoftwarebutton = new Button();
+            editassetsbutton = new Button();
+            Employee = new Button();
+            addasset = new Button();
+            panel5 = new Panel();
+            login = new Button();
+            label2 = new Label();
+            label1 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel5.SuspendLayout();
-            panel4.SuspendLayout();
-            panel7.SuspendLayout();
-            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.SteelBlue;
-            panel1.Controls.Add(ats);
             panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(ats);
             panel1.Controls.Add(panel3);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
@@ -62,17 +59,6 @@
             panel1.Size = new Size(1084, 130);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint_1;
-            // 
-            // ats
-            // 
-            ats.AutoSize = true;
-            ats.Font = new Font("Times New Roman", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ats.ForeColor = SystemColors.ButtonFace;
-            ats.Location = new Point(702, 35);
-            ats.Name = "ats";
-            ats.Size = new Size(370, 42);
-            ats.TabIndex = 3;
-            ats.Text = "Asset Tracking System";
             // 
             // pictureBox1
             // 
@@ -88,6 +74,17 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
+            // ats
+            // 
+            ats.AutoSize = true;
+            ats.Font = new Font("Times New Roman", 28F, FontStyle.Bold);
+            ats.ForeColor = SystemColors.ButtonFace;
+            ats.Location = new Point(666, 42);
+            ats.Name = "ats";
+            ats.Size = new Size(386, 43);
+            ats.TabIndex = 3;
+            ats.Text = "Asset Tracking System";
+            // 
             // panel3
             // 
             panel3.Location = new Point(361, 128);
@@ -95,37 +92,61 @@
             panel3.Size = new Size(375, 208);
             panel3.TabIndex = 0;
             // 
-            // Employee
+            // addingSoftwarebutton
             // 
-            Employee.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
-            Employee.Location = new Point(18, 8);
-            Employee.Name = "Employee";
-            Employee.Padding = new Padding(10);
-            Employee.Size = new Size(349, 235);
-            Employee.TabIndex = 6;
-            Employee.Text = "Employees";
-            Employee.UseVisualStyleBackColor = true;
-            Employee.Click += button2_Click;
+            addingSoftwarebutton.Font = new Font("Georgia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            addingSoftwarebutton.Location = new Point(666, 473);
+            addingSoftwarebutton.Name = "addingSoftwarebutton";
+            addingSoftwarebutton.Padding = new Padding(10);
+            addingSoftwarebutton.Size = new Size(178, 98);
+            addingSoftwarebutton.TabIndex = 7;
+            addingSoftwarebutton.Text = "Add Software";
+            addingSoftwarebutton.UseVisualStyleBackColor = true;
+            addingSoftwarebutton.Click += addingSoftwarebutton_Click;
+            // 
+            // editsoftwarebutton
+            // 
+            editsoftwarebutton.Font = new Font("Georgia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            editsoftwarebutton.Location = new Point(893, 473);
+            editsoftwarebutton.Name = "editsoftwarebutton";
+            editsoftwarebutton.Padding = new Padding(10);
+            editsoftwarebutton.Size = new Size(178, 98);
+            editsoftwarebutton.TabIndex = 8;
+            editsoftwarebutton.Text = "View/Edit Software";
+            editsoftwarebutton.UseVisualStyleBackColor = true;
+            editsoftwarebutton.Click += editsoftwarebutton_Click;
             // 
             // editassetsbutton
             // 
             editassetsbutton.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
-            editassetsbutton.Location = new Point(25, 8);
+            editassetsbutton.Location = new Point(444, 473);
             editassetsbutton.Name = "editassetsbutton";
             editassetsbutton.Padding = new Padding(10);
-            editassetsbutton.Size = new Size(342, 235);
+            editassetsbutton.Size = new Size(178, 98);
             editassetsbutton.TabIndex = 6;
             editassetsbutton.Text = "View/Edit Assets";
             editassetsbutton.UseVisualStyleBackColor = true;
             editassetsbutton.Click += SystemInfo_Click;
             // 
+            // Employee
+            // 
+            Employee.Font = new Font("Georgia", 15.75F, FontStyle.Bold);
+            Employee.Location = new Point(223, 471);
+            Employee.Name = "Employee";
+            Employee.Padding = new Padding(10);
+            Employee.Size = new Size(178, 98);
+            Employee.TabIndex = 6;
+            Employee.Text = "Employees";
+            Employee.UseVisualStyleBackColor = true;
+            Employee.Click += button2_Click;
+            // 
             // addasset
             // 
             addasset.Font = new Font("Georgia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            addasset.Location = new Point(12, 8);
+            addasset.Location = new Point(11, 471);
             addasset.Name = "addasset";
             addasset.Padding = new Padding(10);
-            addasset.Size = new Size(342, 235);
+            addasset.Size = new Size(178, 98);
             addasset.TabIndex = 6;
             addasset.Text = "Add Asset";
             addasset.UseVisualStyleBackColor = true;
@@ -134,61 +155,52 @@
             // panel5
             // 
             panel5.BackColor = Color.SteelBlue;
+            panel5.Controls.Add(login);
+            panel5.Controls.Add(label2);
+            panel5.Controls.Add(label1);
+            panel5.Controls.Add(addasset);
+            panel5.Controls.Add(Employee);
+            panel5.Controls.Add(editassetsbutton);
             panel5.Controls.Add(editsoftwarebutton);
             panel5.Controls.Add(addingSoftwarebutton);
-            panel5.Location = new Point(0, 377);
+            panel5.Location = new Point(0, 128);
             panel5.Name = "panel5";
-            panel5.Size = new Size(1084, 337);
+            panel5.Size = new Size(1084, 586);
             panel5.TabIndex = 8;
             // 
-            // panel4
+            // login
             // 
-            panel4.BackColor = Color.SteelBlue;
-            panel4.Controls.Add(editassetsbutton);
-            panel4.Location = new Point(712, 128);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(370, 251);
-            panel4.TabIndex = 7;
+            login.Font = new Font("Georgia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            login.Location = new Point(12, 198);
+            login.Name = "login";
+            login.Padding = new Padding(10);
+            login.Size = new Size(178, 98);
+            login.TabIndex = 11;
+            login.Text = "Login";
+            login.UseVisualStyleBackColor = true;
+            login.Click += login_Click;
             // 
-            // panel7
+            // label2
             // 
-            panel7.BackColor = Color.SteelBlue;
-            panel7.Controls.Add(addasset);
-            panel7.Location = new Point(0, 128);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(350, 251);
-            panel7.TabIndex = 5;
+            label2.AutoSize = true;
+            label2.Font = new Font("Times New Roman", 20.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.ForeColor = SystemColors.ButtonFace;
+            label2.Location = new Point(12, 118);
+            label2.Name = "label2";
+            label2.Size = new Size(845, 31);
+            label2.TabIndex = 10;
+            label2.Text = "Please begin by logging in and choosing any option from the bottom tab bar.";
             // 
-            // panel2
+            // label1
             // 
-            panel2.BackColor = Color.SteelBlue;
-            panel2.Controls.Add(Employee);
-            panel2.Location = new Point(346, 128);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(370, 251);
-            panel2.TabIndex = 6;
-            // 
-            // addingSoftwarebutton
-            // 
-            addingSoftwarebutton.Font = new Font("Georgia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            addingSoftwarebutton.Location = new Point(144, 33);
-            addingSoftwarebutton.Name = "addingSoftwarebutton";
-            addingSoftwarebutton.Padding = new Padding(10);
-            addingSoftwarebutton.Size = new Size(342, 235);
-            addingSoftwarebutton.TabIndex = 7;
-            addingSoftwarebutton.Text = "Add Software";
-            addingSoftwarebutton.UseVisualStyleBackColor = true;
-            // 
-            // editsoftwarebutton
-            // 
-            editsoftwarebutton.Font = new Font("Georgia", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            editsoftwarebutton.Location = new Point(576, 33);
-            editsoftwarebutton.Name = "editsoftwarebutton";
-            editsoftwarebutton.Padding = new Padding(10);
-            editsoftwarebutton.Size = new Size(342, 235);
-            editsoftwarebutton.TabIndex = 8;
-            editsoftwarebutton.Text = "View/Edit Software";
-            editsoftwarebutton.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 20F, FontStyle.Bold);
+            label1.ForeColor = SystemColors.ButtonFace;
+            label1.Location = new Point(12, 35);
+            label1.Name = "label1";
+            label1.Size = new Size(668, 31);
+            label1.TabIndex = 9;
+            label1.Text = "Welcome to the Asset Tracking System for ScottishGlen.";
             // 
             // HomePage
             // 
@@ -197,9 +209,6 @@
             BackColor = Color.WhiteSmoke;
             ClientSize = new Size(1084, 711);
             Controls.Add(panel5);
-            Controls.Add(panel4);
-            Controls.Add(panel2);
-            Controls.Add(panel7);
             Controls.Add(panel1);
             Name = "HomePage";
             StartPosition = FormStartPosition.CenterScreen;
@@ -209,9 +218,7 @@
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel5.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panel7.ResumeLayout(false);
-            panel2.ResumeLayout(false);
+            panel5.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -221,14 +228,14 @@
         private Panel panel3;
         private PictureBox pictureBox1;
         private Label ats;
-        private Button Employee;
+        private Button addingSoftwarebutton;
+        private Button editsoftwarebutton;
         private Button editassetsbutton;
+        private Button Employee;
         private Button addasset;
         private Panel panel5;
-        private Panel panel4;
-        private Panel panel7;
-        private Panel panel2;
-        private Button editsoftwarebutton;
-        private Button addingSoftwarebutton;
+        private Button login;
+        private Label label2;
+        private Label label1;
     }
 }

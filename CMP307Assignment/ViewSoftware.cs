@@ -16,5 +16,10 @@ namespace CMP307Assignment
         {
             InitializeComponent();
         }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
