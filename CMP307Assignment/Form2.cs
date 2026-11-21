@@ -125,7 +125,12 @@ namespace CMP307Assignment
             {
                 MessageBox.Show("There was an error loading this employee" + ex.Message);
             }
-        }    
+        }
+
+        private void password_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
-        
+
 }

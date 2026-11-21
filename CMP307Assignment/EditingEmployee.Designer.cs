@@ -44,6 +44,8 @@
             label2 = new Label();
             employeeID = new TextBox();
             label1 = new Label();
+            label6 = new Label();
+            textBox1 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -194,11 +196,31 @@
             label1.TabIndex = 22;
             label1.Text = "Employee Identification Number";
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Sitka Display", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(398, 338);
+            label6.Name = "label6";
+            label6.Size = new Size(99, 30);
+            label6.TabIndex = 34;
+            label6.Text = "Password";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(398, 382);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(258, 23);
+            textBox1.TabIndex = 35;
+            textBox1.UseSystemPasswordChar = true;
+            // 
             // EditingEmployee
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1157, 632);
+            Controls.Add(textBox1);
+            Controls.Add(label6);
             Controls.Add(button2);
             Controls.Add(updateinformation);
             Controls.Add(Departmentsbox);
@@ -239,5 +261,7 @@
         private Label label2;
         private TextBox employeeID;
         private Label label1;
+        private Label label6;
+        private TextBox textBox1;
     }
 }

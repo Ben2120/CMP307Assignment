@@ -45,6 +45,8 @@
             button1 = new Button();
             button2 = new Button();
             EditEmployee = new Button();
+            password = new TextBox();
+            label6 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -156,7 +158,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Sitka Display", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(12, 320);
+            label5.Location = new Point(384, 328);
             label5.Name = "label5";
             label5.Size = new Size(120, 30);
             label5.TabIndex = 11;
@@ -166,7 +168,7 @@
             // 
             Departmentsbox.FormattingEnabled = true;
             Departmentsbox.Items.AddRange(new object[] { "Finance", "Human Resources", "Operations", "Sales", "Information Technology" });
-            Departmentsbox.Location = new Point(12, 364);
+            Departmentsbox.Location = new Point(384, 372);
             Departmentsbox.Name = "Departmentsbox";
             Departmentsbox.Size = new Size(258, 23);
             Departmentsbox.TabIndex = 12;
@@ -207,11 +209,32 @@
             EditEmployee.UseVisualStyleBackColor = true;
             EditEmployee.Click += EditEmployee_Click;
             // 
+            // password
+            // 
+            password.Location = new Point(12, 372);
+            password.Name = "password";
+            password.Size = new Size(258, 23);
+            password.TabIndex = 24;
+            password.UseSystemPasswordChar = true;
+            password.TextChanged += password_TextChanged;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Sitka Display", 15.7499981F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.Location = new Point(12, 328);
+            label6.Name = "label6";
+            label6.Size = new Size(99, 30);
+            label6.TabIndex = 23;
+            label6.Text = "Password";
+            // 
             // Employee
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1134, 612);
+            Controls.Add(password);
+            Controls.Add(label6);
             Controls.Add(EditEmployee);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -254,5 +277,7 @@
         private Button button1;
         private Button button2;
         private Button EditEmployee;
+        private TextBox password;
+        private Label label6;
     }
 }

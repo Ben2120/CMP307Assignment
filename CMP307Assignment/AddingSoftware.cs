@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Management;
@@ -22,7 +23,7 @@ namespace CMP307Assignment
 
         private void AddingSoftware_Load(object sender, EventArgs e)
         {
-            //RetrievingSystemInfo();
+           RetrievingSystemInfo();
         }
 
         private void exitbutton_Click(object sender, EventArgs e)
@@ -32,15 +33,57 @@ namespace CMP307Assignment
 
         private void savebutton_Click(object sender, EventArgs e)
         {
+            string connectionString = @"Server = tolmount.abertay.ac.uk; Database = mssql2403393; User Id = mssql2403393; Password = gKL5hCw3Gs; Encrypt = True; TrustServerCertificate = True;";
 
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show("Connection to database has failed - " + ex.Message);
+            }
+            //this is ensuring that the data which has been entered into the boxes is stored into the database correctly
+            string query = @"INSERT INTO ATS.SOFTWARE (OSName, OSVersion, OSManufacturer) OUTPUT INSERTED.AssetID VALUES (@OperatingSystemName, @OperatingSystemVersion, @OperatingSystemManufacturer)";
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+
+                {
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@OSName", OperatingSystemName.Text);
+                        command.Parameters.AddWithValue("@OSVersion", OperatingSystemVersion.Text);
+                        command.Parameters.AddWithValue("@OSManufacturer", OperatingSystemManufacturer.Text);
+
+                        connection.Open();
+
+                        int newsoftwareID = Convert.ToInt32(command.ExecuteScalar());
+
+                        softwareID.Text = newsoftwareID.ToString();
+
+                        MessageBox.Show("Software has been saved to the database and has been assigned ID - " + newsoftwareID);
+
+                    }
+                }
+            }
+
+            catch (Exception ex)
+
+            {
+                MessageBox.Show("There was an error saving the asset - " + ex.Message);
+            }
         }
 
-        /*private void RetrievingSystemInfo()
+        private void RetrievingSystemInfo()
         {
 
             //getting the system name from the machine
-            OperatingSystemName.Text = Environment.OSName;
-            .
+            //OperatingSystemName.Text = Environment.OSName;
 
             //getting the manufacturer and model
             //Used the same method as taught in CMP201
@@ -50,32 +93,15 @@ namespace CMP307Assignment
                 //this section reads the hardware details from the system it is running on 
                 foreach (ManagementObject computer in Searcher.Get())
                 {
-                    systemmanufacturer.Text = Convert.ToString(computer["Manufacturer"]);
+                    OperatingSystemName.Text = Convert.ToString(computer["OSName"]);
 
-                    systemmodel.Text = Convert.ToString(computer["Model"]);
+                    OperatingSystemManufacturer.Text = Convert.ToString(computer["OSManufacturer"]);
 
-                    systemtype.Text = Convert.ToString(computer["SystemType"]);
+                    OperatingSystemVersion.Text = Convert.ToString(computer["Version"]);
 
                     break;
                 }
             }
-
-            //get the ip address from the computer system
-            try
-            {
-                var ipAddress = Dns.GetHostAddresses
-                    (Dns.GetHostName()).FirstOrDefault
-                    (ip => ip.AddressFamily == AddressFamily.InterNetwork && !IPAddress.IsLoopback(ip));
-
-                systemIP.Text = ipAddress?.ToString() ?? "";
-            }
-
-            //this ensures the user is aware if the software could not read the IP address from the system
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                "We were unable to get your IP address - " + ex.Message);
-            }
-        }*/
+        }
     }
 }
